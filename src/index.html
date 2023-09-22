@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML 5 Boilerplate</title>
+    <script src="public/scripts/EmployeeService.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        const listOfEmployees = employeeService().GetEmployees();
+
+        let employeesContent = "<p>";
+
+        for (let i = 0; i < listOfEmployees.length; i++) {
+          employeesContent += listOfEmployees[i] + "<br/>";
+        }
+        employeesContent += "</p>"
+
+        document.getElementById("content").innerHTML = "employeesContent";
+    </script>
+</body>
+</html>
