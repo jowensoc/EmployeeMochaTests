@@ -1,6 +1,5 @@
 let assert = chai.assert;
 import employeeService from "../src/public/scripts/EmployeeService.js";
-import departmentService from "../src/public/scripts/DepartmentService.js";
 
 describe('Employees Service', function () {
   describe('Employees', function () {
@@ -16,12 +15,19 @@ describe('Employees Service', function () {
 
           assert(listOfRoles !== null);
           assert.ok(listOfRoles.length > 0);
-      });
+    });
 
-      it('has "Project Leader" among the roles', function () {
-          let listOfRoles = employeeService.employeeService().GetRoles();
+    it('should return a list of departments', function () {
+          let listOfDepartments = employeeService.employeeService().GetDepartments();
 
-          assert.ok(listOfRoles.indexOf("Project Leader") >= 0);
-      });
+          assert(listOfDepartments !== null);
+          assert.ok(listOfDepartments.length > 0);
+    });
+
+    it('has "Project Leader" among the roles', function () {
+      let listOfRoles = employeeService.employeeService().GetRoles();
+
+      assert.ok(listOfRoles.indexOf("Project Leader") >= 0);
+    });
   });
 });
